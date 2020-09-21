@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Demo1_Android_Jar</string>
+    <string name="title1">Hello World!</string>
+    <string name="second_button">Second Button</string>
+</resources>
