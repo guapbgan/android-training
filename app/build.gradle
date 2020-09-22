@@ -2,7 +2,17 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 29
-//    buildToolsVersion "30.0.2"
+    buildToolsVersion "30.0.2"
+
+    //new version
+    buildFeatures{
+        viewBinding = true
+    }
+
+    //old version
+//    viewBinding{
+//        enabled = true
+//    }
 
     defaultConfig {
         applicationId "com.example.demo1_android_jar"
@@ -20,6 +30,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -29,6 +43,8 @@ dependencies {
     testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-    compile project(path: ':demolib')
+    implementation project(path: ':demolib')
+    implementation 'com.jakewharton:butterknife:10.2.3'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
 
 }
